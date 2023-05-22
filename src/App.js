@@ -1,14 +1,37 @@
 import './App.css';
-import {useState} from "react";
 import shems from "./shems.jpg";
+import {useDispatch, useSelector} from "react-redux";
+import {Cursor} from "./components/Investments/Cursor/Cursor";
+import {Pervash} from "./components/Investments/Pervash/Pervash";
+import {Lecture} from "./components/Investments/Lecture/Lecture";
 function App() {
-  const [value, setValue] = useState(0);
+    const dispatch = useDispatch();
+    const money = useSelector(state => state.money);
+    const shemsClick = () =>{
+        dispatch({type:"ADD_MONEY", payload:1});
+    }
+
+    /*TODO:
+        cursors
+        pervash
+        lection
+        public speech
+        Node
+        GitHub
+        youtube
+        patreon
+     */
+
   return (
     <div className="flexBox">
-        <div className="flexLeft">a</div>
+        <div className="flexLeft">
+            <Cursor></Cursor>
+            <Pervash></Pervash>
+            <Lecture></Lecture>
+        </div>
         <div className="flexCentral">
-            <h1>{value}</h1>
-            <img className="shemsClick" src={shems} alt = "shems" onClick={()=>setValue(value+1)}></img>
+            <h1>{Math.round(money)}</h1>
+            <img className="shemsClick" src={shems} alt = "shems" onClick={shemsClick}></img>
         </div>
         <div className="flexRight">a</div>
     </div>
