@@ -11,6 +11,11 @@ const defaultStats = {
     cursors:0,
     pervashs:0,
     lectures:0,
+
+    bonus:0,
+    cursorBonus:0,
+    pervashsBonus:0,
+    lecturesBonus:0,
 }
 const reducer = (state = defaultStats, action) =>{
     switch (action.type){
@@ -24,6 +29,8 @@ const reducer = (state = defaultStats, action) =>{
             return {...state,pervashs: action.payload};
         case "ADD_LECTURES":
             return {...state,lectures: action.payload};
+        case "ADD_BONUS_CURSORS":
+            return {...state,cursorBonus: action.payload};
         default:
             return state;
     }

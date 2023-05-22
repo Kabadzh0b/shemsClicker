@@ -8,6 +8,8 @@ export class Investment{
     farmingTime;
     interval;
     farmingPerSec = 0;
+    bonus = 0;
+    typeBonus = 0;
 
     constructor(baseCost, dispatchType, farmingValue, farmingTime) {
         this.baseCost = baseCost;
@@ -16,6 +18,7 @@ export class Investment{
         this.farmingValue = farmingValue;
         this.baseFarmingTime = farmingTime;
     }
+
     addItem(dispatch){
         this.num++;
         dispatch({type:this.dispatchType, payload:this.num})
@@ -27,9 +30,9 @@ export class Investment{
             clearInterval(this.interval);
         }
         this.farmingTime = this.baseFarmingTime/this.num;
-        this.farmingPerSec = this.farmingValue/this.farmingTime * 1000;
+        this.farmingPerSec = this.farmingValue*(1 + (this.bonus + this.typeBonus)/100)/this.farmingTime * 1000;
         this.interval = setInterval(()=>{
-            dispatch({type:"ADD_MONEY", payload:this.farmingValue})
+            dispatch({type:"ADD_MONEY", payload:this.farmingValue*(1 + (this.bonus + this.typeBonus)/100)})
         },this.farmingTime);
     }
 }

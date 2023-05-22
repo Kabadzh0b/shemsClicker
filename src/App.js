@@ -4,6 +4,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {Cursor} from "./components/Investments/Cursor/Cursor";
 import {Pervash} from "./components/Investments/Pervash/Pervash";
 import {Lecture} from "./components/Investments/Lecture/Lecture";
+import {Upgrades} from "./components/Upgrades/Upgrades";
+
 function App() {
     const dispatch = useDispatch();
     const money = useSelector(state => state.money);
@@ -12,9 +14,6 @@ function App() {
     }
 
     /*TODO:
-        cursors
-        pervash
-        lection
         public speech
         Node
         GitHub
@@ -33,7 +32,9 @@ function App() {
             <h1>{Math.round(money)}</h1>
             <img className="shemsClick" src={shems} alt = "shems" onClick={shemsClick}></img>
         </div>
-        <div className="flexRight">a</div>
+        <div className="flexRight">
+            <Upgrades></Upgrades>
+        </div>
     </div>
   );
 }

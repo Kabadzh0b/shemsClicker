@@ -4,21 +4,21 @@ import {Investment} from "../Investment";
 import {useDispatch} from "react-redux";
 
 const DEFAULT_SETTINGS = [100, "ADD_PERVASHS", 10, 10000];
-const CursorObj = new Investment(...DEFAULT_SETTINGS);
+const pervashObj = new Investment(...DEFAULT_SETTINGS);
 export const Pervash = () =>{
     const dispatch = useDispatch();
 
     const addPervash = () => {
-        CursorObj.addItem(dispatch);
-        CursorObj.initInterval(dispatch);
+        pervashObj.addItem(dispatch);
+        pervashObj.initInterval(dispatch);
     }
 
     return(
         <div className={classes.investment} onClick={addPervash}>
             Pervashy
             <img className={classes.investmentLogo} src={pervashLogo} alt="cursor img" />
-            {CursorObj.farmingPerSec.toFixed(1)}per sec
-            cost: {CursorObj.cost}
+            {pervashObj.farmingPerSec.toFixed(1)}per sec
+            cost: {pervashObj.cost}
         </div>
     )
 }
