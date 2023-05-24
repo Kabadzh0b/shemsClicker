@@ -30,7 +30,9 @@ const reducer = (state = defaultStats, action) =>{
         case "ADD_LECTURES":
             return {...state,lectures: action.payload};
         case "ADD_BONUS_CURSORS":
-            return {...state,cursorBonus: action.payload};
+            return {...state,cursorBonus: state.cursorBonus + action.payload};
+        case "ADD_BONUS_PERVASHS":
+            return {...state,pervashsBonus: state.cursorBonus + action.payload};
         default:
             return state;
     }

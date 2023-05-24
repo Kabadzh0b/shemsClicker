@@ -3,7 +3,7 @@ import cursorLogo from './cursor.png'
 import {Investment} from "../Investment";
 import {useDispatch, useSelector} from "react-redux";
 const DEFAULT_SETTINGS = [10, "ADD_CURSORS", 0.1, 1000];
-const cursorObj = new Investment(...DEFAULT_SETTINGS);
+export const cursorObj = new Investment(...DEFAULT_SETTINGS);
 
 export const Cursor = () =>{
     const dispatch = useDispatch();
