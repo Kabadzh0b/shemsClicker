@@ -19,7 +19,7 @@ export const Cursor = () =>{
         <div className={classes.investment} onClick={addCursor}>
             Cursors
             <img className={classes.investmentLogo} src={cursorLogo} alt="cursor img" />
-            {cursorObj.farmingPerSec.toFixed(1)}per sec
+            {cursorObj.farmingPerSec.toFixed(1)}/s
             cost: {cursorObj.cost}
         </div>
     )

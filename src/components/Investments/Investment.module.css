@@ -3,8 +3,9 @@
     flex-wrap:wrap;
     justify-content: space-evenly;
     align-items: center;
-    width: 20vw;
-    height: 3vw;
+    width: 33.33vw;
+    height: 5vw;
+    font-size:25px;
     background: blueviolet;
     border-radius: 5%;
     border: 2px yellow;

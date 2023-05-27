@@ -17,7 +17,7 @@ export const Pervash = () =>{
         <div className={classes.investment} onClick={addPervash}>
             Pervashy
             <img className={classes.investmentLogo} src={pervashLogo} alt="cursor img" />
-            {pervashObj.farmingPerSec.toFixed(1)}per sec
+            {pervashObj.farmingPerSec.toFixed(1)}/s
             cost: {pervashObj.cost}
         </div>
     )

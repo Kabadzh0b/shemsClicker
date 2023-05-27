@@ -18,7 +18,7 @@ export const Lecture = () =>{
         <div className={classes.investment} onClick={addLecture}>
             Lectures
             <img className={classes.investmentLogo} src={lectureLogo} alt="cursor img" />
-            {lectureObj.farmingPerSec.toFixed(1)}per sec
+            {lectureObj.farmingPerSec.toFixed(1)}/s
             cost: {lectureObj.cost}
         </div>
     )

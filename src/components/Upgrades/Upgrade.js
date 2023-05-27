@@ -4,6 +4,7 @@ export class Upgrade{
     effect;
     effectType;
     effectString;
+    upgradeString;
 
     buyUpgrade = (dispatch) => {
         this.bought = true;
@@ -39,6 +40,7 @@ export class Upgrade{
         this.cost = cost;
         this.effect = effect;
         this.effectType = type;
-        this.effectString = `${effect}% to ${type}`;
+        this.effectString = `${effect}% to ${type}. `;
+        this.upgradeString = `Upgrade: Effect: ${this.effectString}\n Cost: ${this.cost}`;
     }
 }

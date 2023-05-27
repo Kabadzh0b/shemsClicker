@@ -16,9 +16,7 @@ export const PervashUpgrades = () => {
             upgrade.buyUpgrade(dispatch);
             UPGRADES.shift();
         }}>
-            Upgrade
-            Effect: {upgrade.effectString}
-            cost: {upgrade.cost}
+            {upgrade.upgradeString}
         </div>
     )
 }
